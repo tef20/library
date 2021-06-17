@@ -1,7 +1,7 @@
 // Features to add: 
 //  - click away / escape input form
 //      - problem: propegation from clicks on form?
-//  - *record always exist message if user enters duplicate
+//  - "*record always exists" message if user enters duplicate
 //      - remove on refresh
 
 let myLibrary = [];
