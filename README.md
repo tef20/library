@@ -9,10 +9,11 @@ Features:
  - randomized complmentary book cover colours
  - edit read status of book in library
  - remove book from library
+ - all user data persists in localStorage
 
 Features to add:
  - escape / click away from popup form
  - send record duplication message to user (currently only console)
- - save progress to cloud / local device
+ - button to remove any stored data on user PC
 
 visit: https://tef20.github.io/calculator/
