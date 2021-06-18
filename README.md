@@ -16,4 +16,4 @@ Features to add:
  - send record duplication message to user (currently only console)
  - button to remove any stored data on user PC
 
-visit: https://tef20.github.io/calculator/
+visit: https://tef20.github.io/library/
