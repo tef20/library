@@ -4,7 +4,7 @@
 //  - "*record always exists" message if user enters duplicate
 //      - remove on refresh
 
-let myLibrary = [];
+let myLibrary = localStorage.getItem('booksLibrary') ? JSON.parse(localStorage.getItem('booksLibrary')) : [];
 
 // DOM elements //
 // Bookshelf
@@ -21,6 +21,7 @@ const inpFormStatus = document.getElementById('readStatus');
 const btnSubmit = document.getElementById('btnSubmit');
 const btnCancel = document.getElementById('btnCancel');
 
+updateShelf(myLibrary);
 
 // event bindings
 btnAddBook.onclick = () => newBookFormPopUp.setAttribute('style', 'display: flex');
@@ -110,15 +111,8 @@ function formatText (string) {
                 .join(" ");
 }
 
-let coverColours = ['#6495ed', '#edbc64', '#64daed', '#ed6495', '#95ed64'];
 function newCoverColour () {
-  // picks random colour but colours don't repeat
-  // bit smelly -- maybe have a colours to avoid array instead
-  if (!coverColours.length) {
-    coverColours = ['#6495ed', '#edbc64', '#64daed', '#ed6495', '#95ed64'];
-    coverColours.sort((a, b) => {return 0.5 - Math.random()});
-  }
-  return coverColours.pop();
+  return randomChoice(['#6495ed', '#edbc64', '#64daed', '#ed6495', '#95ed64']);
 }
   
 function randomChoice (arr) {
@@ -135,6 +129,9 @@ function updateShelf (library) {
 
   // swap in, preserve new book button in end position
   bookshelf.replaceChildren(...newShelf, btnAddBook);
+  
+  // Add to local storage
+  localStorage.setItem('booksLibrary', JSON.stringify(library));
 }
 
 function makeBookHTML (bookInfo, library) {
@@ -234,7 +231,7 @@ function makeBookHTML (bookInfo, library) {
   function toggleReadStatus (idNum, library) {
     for (let i = 0; i < library.length; i++) { 
       if (library[i].bookID === idNum) { 
-        library[i].toggleReadStatus();
+        library[i].readStatus = !library[i].readStatus;
         break;
       }
     }
