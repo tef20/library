@@ -30,12 +30,7 @@ btnCancel.onclick = () => {
   newBookFormPopUp.setAttribute('style', 'display: none');
   newBookForm.reset();
 }
-// TODO: allow click away / escape away w / o propagation...
-// newBookFormPopUp.addEventListener('click', event => {
-//   event.stopPropagation()
-//   newBookFormPopUp.setAttribute('style', 'display: none');
-//   newBookForm.reset();
-// })
+
 newBookForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit (e) {
