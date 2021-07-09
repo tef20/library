@@ -50,15 +50,17 @@ function handleSubmit (e) {
     newBookForm.reset();
 }
 
-const Book = {
-    bookID: 0,
-    title: 'title',
-    author: 'author',
-    year: 0,
-    coverColour: '#6495ed',
-    readStatus: false,
-        
-    toggleReadStatus: function () {this.readStatus = !this.readStatus},
+class Book {
+  constructor(bookID, title, author, year, coverColour, readStatus) {
+    this.bookID = bookID;
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.coverColour = coverColour;
+    this.readStatus = readStatus;
+  }  
+          
+    toggleReadStatus() {this.readStatus = !this.readStatus};
 }
 
 
@@ -69,21 +71,16 @@ function addBookToLibrary(library, title, author, year, readStatus, coverColour)
       return;
     }
 
-    const newBook = createBook(library, title, author, year, readStatus, coverColour);
-    library.push(newBook);
-}
+    const newBook = new Book(
+      generateID(library),
+      formatText(title),
+      formatText(author),
+      year,
+      newCoverColour(),
+      Boolean(readStatus)
+    );
   
-function createBook (library, title, author, year, readStatus, coverColour) {
-  // createBook
-  const newBook = Object.create(Book);
-  newBook.bookID = generateID(library);
-  newBook.title = formatText(title);
-  newBook.author = formatText(author);
-  newBook.year = year;
-  newBook.coverColour = newCoverColour(); // coverColour ? coverColour : newCoverColour();
-  newBook.readStatus = Boolean(readStatus);
-
-  return newBook;
+    library.push(newBook);
 }
   
 function checkDuplicateBooks (library, title, author, year) {
