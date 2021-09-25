@@ -3,6 +3,8 @@
 //      - problem: propegation from clicks on form?
 //  - "*record always exists" message if user enters duplicate
 //      - remove on refresh
+//  - add event listener to bookshelf to delegate to future children instead of each child when made
+//      - reconfigure book html items to use data attributes that match book ID's
 
 let myLibrary = localStorage.getItem('booksLibrary') ? JSON.parse(localStorage.getItem('booksLibrary')) : [];
 
@@ -53,9 +55,9 @@ class Book {
     this.year = year;
     this.coverColour = coverColour;
     this.readStatus = readStatus;
-  }  
+  }
           
-    toggleReadStatus() {this.readStatus = !this.readStatus};
+  toggleReadStatus() {this.readStatus = !this.readStatus};
 }
 
 
