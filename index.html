@@ -1,44 +1,75 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Library</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
-    </head>
-    <body>
-        <h1>Welcome to the Library</h1>
-        <!-- <button id="addBookButton">Add Book</button> -->
-        <div id="newBookFormPopUp">
-            <form id="newBookForm">
-                <!-- <h2>New Book</h2> -->
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" class="textbox" placeholder="eg. Alice's Adventures in Wonderland" required>
-            
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author" class="textbox" placeholder="eg. Lewis Carroll" required>
-            
-                <label for="year">Publication year</label>
-                <input type="number" id="year" name="year" class="textbox" placeholder="eg. 1862" required>
-                
-                <label for="readStatus">Read
-                    <input type="checkbox" id="readStatus" name="title">
-                </label>
-                <div class="buttonsBar">
-                    <button type="submit" id="btnSubmit" class="btn">Add to library</button>
-                    <button type="submit" id="btnCancel" class="btn cancel">Cancel</button>
-                </div>
-                
-            </form>
+  <head>
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Welcome to the Library</h1>
+    <!-- <button id="addBookButton">Add Book</button> -->
+    <div id="newBookFormPopUp">
+      <form id="newBookForm">
+        <!-- <h2>New Book</h2> -->
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="textbox"
+          placeholder="eg. Alice's Adventures in Wonderland"
+          required
+        />
+
+        <label for="author">Author</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          class="textbox"
+          placeholder="eg. Lewis Carroll"
+          required
+        />
+
+        <label for="year">Publication year</label>
+        <input
+          type="number"
+          id="year"
+          name="year"
+          class="textbox"
+          placeholder="eg. 1862"
+          required
+        />
+
+        <label for="readStatus"
+          >Read
+          <input type="checkbox" id="readStatus" name="title" />
+        </label>
+        <div class="buttonsBar">
+          <button type="submit" id="btnSubmit" class="btn">
+            Add to library
+          </button>
+          <button type="submit" id="btnCancel" class="btn cancel">
+            Cancel
+          </button>
         </div>
-        <section id="bookshelf">
-            <!-- books added here -->
-            <div id="addBookButton" class="bookTemplate bookAdd">
-                <span class="material-icons-outlined md-60">add</span>
-            </div>
-        </section>
-        <script src="script.js"></script>
-    </body>
+      </form>
+    </div>
+    <section id="bookshelf">
+      <!-- books added here -->
+      <div id="addBookButton" class="bookTemplate bookAdd">
+        <span class="material-icons-outlined md-60">add</span>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
