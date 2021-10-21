@@ -135,9 +135,6 @@ body {
     left: 0px;
     right: 0px;
     display: none;
-/* remove \/ */
-    display: flex;
-/* remove /\ */
     flex-direction: column;
     width: 100%;
     height: 100%;
